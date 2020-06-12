@@ -14,8 +14,14 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("https://api.tmsandbox.co.nz/v1/MyTradeMe/Watchlist/All.json", requestOptions)
+var result;
+var response = fetch("https://api.tmsandbox.co.nz/v1/MyTradeMe/SoldItems/Last45Days.json", requestOptions)
   .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
+  .then(result => this.result = result)
+  .catch(error => console.log('error', error)
+);
+
+console.log(result);
+
+
 });
